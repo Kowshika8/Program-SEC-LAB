@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input to Paragraph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #input-container {
+            margin-bottom: 20px;
+        }
+        #result {
+            font-size: 18px;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="input-container">
+        <label for="user-input">Enter Text: </label>
+        <input type="text" id="user-input" placeholder="Type something...">
+        <button onclick="addText()">Add</button>
+    </div>
+    
+    <p id="result"></p>
+
+    <script>
+        // Function to get input value and display it in the paragraph
+        function addText() {
+            const userInput = document.getElementById('user-input').value;  // Get the input value
+            const resultParagraph = document.getElementById('result');      // Get the paragraph tag
+            
+            if (userInput.trim() !== '') {  // Check if input is not empty
+                resultParagraph.textContent = userInput;  // Set the paragraph text to input value
+                document.getElementById('user-input').value = '';  // Clear the input field after adding
+            } else {
+                alert('Please enter something!');
+            }
+        }
+    </script>
+</body>
+</html>
